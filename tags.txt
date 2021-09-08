@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt_BR"></html>
+
+1. HTML
+Tag HTML é aquela que informa aos navegadores que o documento tem um código HTML:
+
+<html> </html>
+2. Título
+Title é o título da página da web, que identifica o seu site na internet:
+
+<title> </title>
+3. Cabeçalho
+Tag head é o cabeçalho do documento HTML, onde estão as informações sobre a identificação e funcionamento do site.
+
+Também é ele que carrega os metadados, incluindo título interno de páginas e codificação do documento.
+
+Entenda como título interno os cabeçalhos e títulos usados através dos seis níveis de título: h1, h2, h3, h4, h5 e h6 – sendo o h1 o mais relevante e o h6 o menos importante.
+
+A tag de cabeçalho é representada por:
+
+<head> </head>
+4. Corpo
+Representado pela abertura <body> e fechamento </body> é no corpo dos códigos HTML que se concentram imagens, textos, vídeos e outras funcionalidades do conteúdo.
+
+Em outras palavras, é ele que reúne os elementos mostrados em páginas estáticas.
+
+Veja alguns exemplos:
+
+alink: é a cor do link ativado
+background: se trata da imagem do plano de fundo
+bgcolor: é a cor de fundo da página
+link: cor dos links existentes
+leftmargin: para eliminar a margem esquerda
+marginheight: para eliminar a margem esquerda
+marginwidth: para eliminar a margem do topo
+text: é a cor do texto principal
+topmargin: para eliminar a margem no topo
+vlink: indica a dor do link que já foi visitado.
+Aproveite para observar também outros tags disponíveis para formatação de texto e destacar trechos da parte escrita da página:
+
+b: negrito
+i: itálico
+ins e del: para sinalizar trechos incluídos ou que foram removidos
+mark: para texto destacado
+small: para textos menores
+sup e sub: sobrescrito e subscrito.
+5. Títulos e legendas
+O título de uma página HTML é composto pelas tags <title> para abrir e </title> para fechar.
+
+Mas em termos de hierarquia, <h1> é o título mais importante, seguido por <h2>, <h3> e assim, sucessivamente.
+
+Enquanto isso, a legenda é representada pela abertura <caption> e fechamento </caption>.
+
+6. Imagens
+Representadas pela tag <img> as imagens podem ser inseridas in-line com os seguintes atributos comuns:
+
+align: é o alinhamento da imagem, que pode ser ainda top (topo), middle (meio), bottom (alinha a imagem com a base dos outros elementos da linha), left (à esquerda) ou right (à direita)
+alt: é o atributo que exibe um texto alternativo em navegadores que não suportam imagens ou que são acessados por deficientes visuais
+border: se refere à largura da borda da imagem
+height: altura sugerida em pixels
+hspace: indica o espaço entre imagem e texto que aparece à esquerda e à direita
+src: sinaliza a URL da imagem
+title:indica o texto que vai aparecer quando se passar o mouse sobre a imagem
+usemap: mostra o mapeamento usado
+vspace: espaço entre imagem e texto que vem acima e abaixo
+width: extensão da imagem, em pixels.
+Exemplo: 
+
+7. Hiperlinks
+Hiperlinks são os atributos que servem para criar links e, assim, levar o usuário para outros sites ou páginas.
+
+Isto é, as principais engrenagens para que a web seja mesmo uma rede de sites interconectados.
+
+Essas tags são sinalizadas pela tag <a> na abertura e </a> no fechamento.
+
+Porém, exigem o uso do atributo href para indicar o endereço da web que deseja vincular o link.
+
+Exemplo:
+
+<a href=“https://www.neilpatel.com/blog/”>Blog Neil Patel</a>
+
+8. Links internos
+Os atributos <li> <ul> servem para criar listas e menus em seu site e direcionar os visitantes para outras páginas de interesse.
+
+Funcionam como formas de ajudar a guiá-los pelo seu conteúdo, de uma página para outra, sem problema algum.
+
+Enquanto <li> possibilita a inserção de listas em um bloco de texto, o <ul> cria lista desordenada, sem uma sequência numérica.
+
+9. Estilo
+O rótulo de estilo talvez seja o mais fácil de memorizar.
+
+Isso porque é representado por <style> e pode ser usado para definir características como cor, tamanho e tipografia do conteúdo a ser exibido na página.
+
+Para lidar com códigos HTML de cores, é só conhecer o nome delas em inglês, escolher o tamanho da fonte que quer usar e também o código Pantone.
+
+Exemplo: style body: blue; font size: 11 px; color black </style>.
+
+10. O toque final
+Por último, mas não menos importante, está o rótulo “pai de todos”: <!DOCTYPE html>.
+
+Seja na abertura ou no final, é ele que torna o seu site legível em qualquer browser.
+
+Também é ele que indica o idioma em que a página vai ser exibida, bastando incluir <html lang = “pt”> se for em português.

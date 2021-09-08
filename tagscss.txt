@@ -1,0 +1,745 @@
+Sintaxe CSS
+A sintaxe CSS é formada por uma regra com 3 itens fundamentais para definir um estilo. São eles:
+
+Seletor;
+Propriedade;
+Valor.
+Veja a sintaxe:
+
+Seletor {propriedade: valor}
+
+O seletor vincula um elemento do documento HTML a declaração CSS. Declaração CSS é formada pela propriedade e o valor.
+
+A propriedade define uma característica visual para o elemento HTML “selecionado” pelo seletor.
+
+Exemplo: O texto de um parágrafo, marcado com elemento HTML “p”, possui uma propriedade de cor denominada “color”.
+
+Já o valor atribui valor a propriedade escolhida para o elemento selecionado.
+
+Exemplo: O valor da propriedade color para o elemento HTML “p” selecionado é “red” (vermelho). Ou seja, o texto do parágrafo terá uma cor vermelha.
+
+Veja o que foi explicado na imagem a seguir:
+
+regras css
+
+Com esta regra qualquer parágrafo em um documento HTML, desde que não selecionado de outra forma, receberá a cor vermelha.
+
+Este parágrafo é vermelho.
+
+Observações:
+
+Uma regra pode ter mais que uma declaração.
+
+p {
+
+   font-size: 14px;   /* a fonte do texto tem 14 pixels de tamanho */
+
+   color: red;    /* a cor da fonte é vermelha */
+
+}
+Uma regra pode ter mais de um seletor.
+
+/* Os parágrafos e cabeçalhos h1, h2, h3 possuem cor da fonte vermelha */
+
+p , h1, h2, h3 {
+
+   color: red;
+
+}
+Todo conteúdo entre /* */ é um comentário. Comentários servem para instruir quem está lendo o código CSS.
+
+Tipos de seletores comuns
+Apresentarei alguns tipos de seletores mais usados que já te possibilitará estilizar páginas.
+
+Seletor de tipo de elemento
+O seletor “p” que usamos nos exemplos anteriores é um seletor de tipo de elemento. Esta espécie de seletor identifica e vincula um elemento HTML, basta que para isso coloque o elemento como seletor.
+
+body {
+
+   /* aqui vai uma declaração qualquer */
+
+}
+
+
+div {
+
+   /* aqui vai uma declaração qualquer */
+
+}
+
+p, span, strong {
+
+   /* aqui vai uma declaração qualquer */
+
+}
+E podemos usar um ou mais seletores para a mesma declaração. Para isso bastar usarmos vírgulas para separa-los (como nos mostra o exemplo anterior).
+
+Seletor tipo ID
+É um seletor individual usado para vincular somente um elemento por página web. Ele não pode ser usado em dois ou mais elementos. Para construí-lo basta que você crie um nome precedido pelo símbolo #.
+
+#nome-do-identificador {
+
+   background-color: green; /* cor de fundo verde */
+
+}
+Veja agora com atribuir no HTML para que o elemento receba a cor de fundo verde:
+
+<body id="nome-do-identificador">
+</body>
+Seletor tipo class
+Este seletor possibilita o uso em mais de um elemento da mesma página. Indicado quando você precisa atribuir algumas propriedades iguais em elementos diferentes. Para construí-lo basta que você crie um nome precedido por um ponto.
+
+.nome-da-classe {
+
+color: blue; /* cor de texto azul */
+
+}
+<h1 class="nome-da-classe">Título com cor azul</h1>
+
+
+<p class="nome-da-classe">Parágrafo com a cor azul.</p>
+Seletor de atributo
+Este tipo de seletor associa a um atributo utilizado em um elemento HTML. Exemplo:
+
+<input type="submit" value="Enviar">
+Este é um botão para envio de dados de formulários. Podemos usar o atributo “type” com valor “submit” para estilizar o botão.
+
+input[type="submit"] {
+
+   font-weight: bold; /* texto em negrito */
+
+}
+Com estes seletores já da para estilizar suas primeiras páginas. Entretanto existem outros:
+
+Seletor universal;
+Seletor de elementos-filho;
+Seletor adjacente;
+Seletor contextual;
+Seletores tipo pseudo-elementos;
+Seletores tipo pseudo-classe.
+Você pode consulta-los neste Guia da W3C.
+
+Unidades para valores
+Existem inúmeros valores específicos para propriedades. Só que alguns são de uso comum para muitas propriedades e vira e mexe você estará usando. Veja uma pequena relação a seguir:
+
+px – é a unidade de pixels. Muita usada em dimensões de blocos e fontes. Exemplo:
+
+font-size: 14px;
+width: 200px;
+em – Indicada para tamanhos de fontes. Ao usarmos o tamanho padrão do dispositivo do usuário podemos expressar o tamanho da fonte de outros elemento através dessa unidade.
+
+Assim um elemento com tamanho de fonte de 2em (font-size:2em} tem duas vezes o tamanho padrão. Caso o tamanho padrão for 16 pixels, uma fonte de 2em equivalerá a 32 pixels. Exemplo de sintaxe:
+
+font-size: 1.25em;
+font-size: 0.5em;
+% – é, obviamente uma unidade de porcentagens. Ela é relativa ao bloco onde o elemento está contido. Se um bloco tem 150 pixels e for atribuído a outro bloco contido nele uma largura de 50%, equivalerá a 75 pixels.
+
+font-size: 120%;
+width: 50%;
+Hexadecimal – é um sistema de numeração que representa os números em base 16, empregando assim 16 símbolos. Este sistema é composto por 10 números, de 0 a 9, e seis letras adicionais de A a F.
+
+Usamos no CSS para atribuir valores para propriedades de cor para fontes (color), cor de fundo (background-color), cor de borda (border-color) entre outras. Exemplo:
+
+background-color: #cccccc;
+color: #ff0000;
+Neste caso temos a cor vermelha para textos. O valor em hexadecimal em CSS é precedido do símbolo #.
+
+O valor em hexadecimal é formado por três pares de caracteres. A ordem do pares, da esquerda para direita, representa o sistema de cores RGB (Red, Green, Blue) reproduzindo cores através da “mistura” em certa quantidade das cores aditivas Vermelha, Verde e Azul.
+
+Na imagem abaixo vemos uma representação de um cinza escuro obtido pela mistura das três cores:
+
+hexadecimal
+
+O sistema hexadecimal precisa de um artigo a parte. Sugiro que consulte posteriormente este artigo.
+
+Declaração única
+É quando você abrevia declarações reunindo todos os valores destas em um só. E isto pode ser aplicado para fontes, margens, preenchimentos, fundos, bordas, etc. Temas estes que ainda apresentarei neste artigo.
+
+Por exemplo: Border é a propriedade responsável por reunir em uma declaração única os valores das propriedades, border-style, border-width e border-color.
+
+Exemplo. Temos as seguintes declarações para uma div:
+
+div {
+
+   border-style: solid;
+
+   border-width: 1px;
+
+   border-color: black;
+
+}
+Podemos reunir todas estas declarações em uma só usando border. Veja:
+
+div {
+
+   border: solid 1px black;
+
+}
+O que é herança?
+A herança acontece quando elementos filhos herdam algumas propriedades dos elementos pais.
+
+Elementos filhos são os elementos contidos dentro do elemento pai, como por exemplo, os elementos “li” que estão dentro de “ul”. Veja:
+
+<ul>
+
+   <li>Este é um elemento filho de ul.</li>
+
+   <li>Este também.</li>
+
+</ul>
+Elemento pai é, logicamente o que contém o elemento filho. No exemplo acima trata-se de “ul”.
+
+Ao especificar, por exemplo, um valor de font-size para “ul”, seus filhos herdam automaticamente este valor caso não especificarmos nenhum outro valor desta propriedade para eles.
+
+Exemplo:
+
+ul {
+
+   font-size: 14px;
+
+}
+
+ul li {
+
+   color: blue;
+
+}
+Podemos afirmar aqui que o elemento “li” além de receber a cor azul, recebe também um tamanho de fonte de 14 pixels.
+
+Mas atenção! Nem todas as propriedades são herdadas. Porém você pode forçar através do valor “inherit”. Exemplo:
+
+div {
+
+   border: 1px solid #000000 /* borda de um pixel de cor preta */
+
+}
+
+
+p {
+
+   border: inherit;
+
+}
+Onde colocar o CSS dentro do documento HTML
+Existem algumas formas de vincular as folhas de estilos em um documento HTML. Essas formas também definem a localização de cada tipo. Classificam-se em três tipos:
+
+Inline:
+Incorporadas;
+Externas.
+Inline
+Este tipo faz que as regras CSS sejam declaradas dentro de uma tag de abertura usando o atributo “style”. Veja a sintaxe abaixo:
+
+<h2 style="font-size: 18px">Este título possui 18 pixels de tamanho.</h2>
+Este tipo é o menos indicado. Somente para casos específicos. É bom lembrar que o CSS foi criado para separar a apresentação. O tipo inline foge deste objetivo por que incorpora o estilo dentro de uma tag.
+
+Incorporadas
+É considerada incorporada quando as regras de uma folha de estilo são declaradas na seção head do documento HTML dentro do elemento HTML “style”. Este elemento é dedicado especialmente para abrigar informações sobre estilos para o documento. Veja sintaxe:
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="UTF-8">
+
+		<title>Exemplo dos elementos apresentados</title>
+
+		<style type="text/css">
+
+			h2 {
+
+				color: blue;
+
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<h2>Este título possui a cor azul. Valor declarado na regra CSS incorporada no documento entre as tags "style"</h2>
+
+	</body>
+
+</html>
+Este tipo é mais indicado que o anterior, mas ainda não é o melhor. Pode ser uma boa quando o estilo for aplicado somente a uma página.
+
+Externas
+Uma folha de estilo externa é quando as regras CSS são declaradas em um arquivo separado do arquivo HTML que você trabalha.
+
+Um arquivo de folha de estilo tem a extensão .css. Exemplos: estilo.css, style.css, qualquer-nome.css.
+
+Na minha opinião (e também da torcida do Corinthians inteira) essa é a forma mais indicada. Com este tipo você pode separar a marcação (HTML) da apresentação (CSS). Você pode também alterar um estilo de um site inteiro com uma simples edição nas regras definidas.
+
+Podemos classifica-las em linkadas e incorporadas:
+
+Linkadas – Neste tipo usa-se o elemento HTML “link” mais atributos. Veja:
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="UTF-8">
+
+		<title>Exemplo dos elementos apresentados</title>
+
+		<link rel="stylesheet" href="estilo.css">
+
+	</head>
+
+	<body>
+
+		<h2>Este título possui a cor azul. Valor declarado na regra CSS dentro do arquivo "estilo.css"</h2>
+
+	</body>
+
+</html>
+O atributo rel define que o arquivo de destino é uma folha de estilo e href indica o endereço do arquivo .css.
+
+Para criar um aquivo .css, basta abrir seu editor preferido e salvar o documento com a extensão .css. Nele basta colocar as regras CSS vinculadas aos elementos do documento HTML.
+
+Importadas – Este tipo usa as tags “style” da mesma forma que usamos no tipo incorporadas. A grande diferença é que usamos entre as tags a regra @import. Ele é responsável por importar todas as regras do arquivo “estilo.css”. O url(“”) representa a localização do arquivo CSS a ser importado.
+
+Veja:
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="UTF-8">
+
+		<title>Exemplo dos elementos apresentados</title>
+
+		<style type="text/css">
+
+			@import url("estilo.css");
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<h2>Este título possui a cor azul. Valor declarado na regra CSS dentro do arquivo importado "estilo.css".</h2>
+
+	</body>
+
+</html>
+Também podemos usar o @import dentro de um arquivo, uma folha, css externa.
+
+Propriedades bastante usadas
+Existem inúmeras propriedades CSS para diferentes aplicações que dá para escrever um livro imenso sobre elas.
+
+Não é objetivo e não daria explicar todas neste artigo. Entretanto, tentarei passar noções básicas sobre as mais usadas para que um principiante possa dar seus primeiros passos e tenha uma base para pesquisas posteriores.
+
+Para fontes e textos
+É primordial para quem quer mexer com CSS entender as propriedades para fontes e textos, porque a maior parte do conteúdo na web até então é textual. Seguem algumas que você usará bastante.
+
+Font-size – Esta define o tamanho da fonte.
+
+font-size
+
+Os valores mais usados são px, em e porcentagens. Veja:
+
+p {
+
+   font-size: 14px;
+
+}
+Font-family – Define a família de fontes. Com ela você pode declarar uma fonte específica e uma genérica.
+
+font-family
+
+Fontes específicas:
+Verdana, Time New Roman, Monotype Cursiva, Courier New, etc.
+Fontes genéricas:
+serif (fontes com serifas),
+sans-serif (fontes sem serifas),
+cursive (cursiva),
+monospace (fontes mono-espaçadas).
+fantasy (fontes com representações decorativas de caracteres).
+É indicado que toda vez que você declarar uma fonte específica, declare também na sequência uma fonte de família genérica que corresponda à fonte específica declarada. Isso porque se a fonte específica não estiver disponível no dispositivo do usuário o navegador terá a liberdade para escolher uma fonte semelhante da família genérica.
+
+Por exemplo. Se você declarou a fonte específica Verdana, declare também a genérica sans-serif porque Verdana é uma fonte sem serifa. Veja a sintaxe:
+
+p {
+
+   font-family: Verdana, sans-serif;
+
+}
+Importante observar também que quando usar fontes derivadas de família deve-se sempre usar aspas. Exemplo: “Times New Roman”, “Palatino Linotype”, “Book Antiqua”. Veja:
+
+p {
+
+   font-family:  "Times New Roman”, serif;
+
+}
+Font-weight – Esta propriedade serve para determinar o peso da fonte. É usada bastante com o valor “bold” para negritar trechos de textos.
+
+font-weight
+
+O valor maior representa maior peso:
+
+100
+200
+300
+400
+500
+600
+700
+800
+900
+Aqui outros valores possíveis: normal, bold, bolder, lighter.
+
+Veja um exemplo de sintaxe desta propriedade:
+
+p {
+
+   font-weight: bold;
+
+}
+Font-style – Usada para dar estilo. Você pode usar esta propriedade para valores “normal”, “oblique” ou “italic”.
+
+font-style
+
+Veja:
+
+p {
+
+   font-style: italic;
+
+}
+Line-height – É uma propriedade de dimensionamento que permite estipular espaçamento entre linhas.
+
+line-height
+
+Os valores usados para esta propriedade podem ser de diferentes unidades de medidas CSS px, cm, em, %, etc. E também um número (1, 2, 3). Veja:
+
+p {
+
+   line-height: 36px;
+
+}
+Font – A propriedade “font” é indicada se quer diminuir o código reunindo todos os valores das propriedades acima em uma só declaração. Veja:
+
+p {
+
+   font:bold italic 30px/36px Verdana;
+
+}
+Ao usar esta propriedade os valores para “size” e “family” são obrigatórios. Se você declarar line-height seu valor deve vir após o valor de “size” seguido de uma barra “/”.
+
+Text-align – Esta é a propriedade usada para determinar o tipo de alinhamento que um texto possuirá. Os valores para esta propriedade são: left, right, center e justify.
+
+text-align
+
+Para alinhamento à esquerda – text-align: left;
+Para alinhamento à direita – text-align: right;
+Centralizado – text-align: center;
+Justificado – text-align: justify.
+Veja um exemplo:
+
+p {
+
+   text-align: center;
+
+}
+Bom… Existem outras propriedades para dar forma a textos e fontes. Em outra oportunidade podemos comentar sobre elas. Entretanto, com essas apresentadas neste artigo você já tem uma base para seus primeiros passos.
+
+Para cor de textos
+A propriedade para cor de textos é a “color”. Você pode usar valores hexadecimais nessa propriedade. Veja:
+
+p {
+
+   color: #ff0000; /* cor vermelha */
+
+}
+Essa opção é boa porque você pode pegar o valor direto de editores gráficos como o Photoshop, por exemplo. Basta que você coloque o sinal “ # ” antes do hexadecimal.
+
+Outra opções mais avançada é usar os sistemas RGB, RGBA e HSL.
+
+Você pode optar também pelo nome da cor em inglês. Você encontra uma lista de referência aqui . Porém está opção é pouco utilizada se comparada com o hexadecimal.
+
+Para dimensões de blocos
+height-width
+
+Elementos estilizados com CSS possuem largura e altura. Muitas vezes elas nem precisam ser especificadas, pois resultam de outros fatores como tamanho do conteúdo na tela e interferência de outras propriedades.
+
+Porém sempre existirá um momento em que você terá que estipular dimensões de um bloco, principalmente quanto à largura. Veja um exemplo:
+
+div {
+
+   width: 400px; /* cor vermelha */
+
+   height: 200px; /* cor vermelha */
+
+}
+“Width” define a largura do bloco e “height” a altura.
+
+Quando você define valores de porcentagem, por exemplo, para uma largura, seu valor será calculado baseado na largura do elemento pai.
+
+Um dos possíveis valores é o “auto” (width: auto). Quando usado faz que o elemento se ajuste dentro do box pai.
+
+Para fundos do site e de blocos
+A propriedade responsável por atribuir valores para características de fundo de sites, seções e blocos é a background.
+
+Com ele é possível atribuir valores de cor, posicionamento, imagens para fundos, entre outros. Um exemplo comum:
+
+div {
+
+   background: #fff000 url(imagem-de-fundo.png) repeat;
+
+}
+Este exemplo define uma imagem de fundo “imagem-de-fundo.png”. Ela se repetirá em toda a extensão do elemento no eixo x e y, e atrás desta temos uma cor de fundo amarela.
+
+Essa cor será notada se a imagem em png tiver transparência ou enquanto a imagem de fundo estiver sendo carregada no site.
+
+Esta regra poderia ser obtida através de variantes de background. Veja:
+
+div {
+
+   background-image: url(imagem-de-fundo.png); /* Define a imagem de fundo */
+
+   background-color: #fff000; /*  Define a cor do fundo amarela */
+
+   background-repeat: repeat;  /* Define a se a imagem do fundo deve repetir ou não, ou somente no eixo x, ou no y. No caso se repete em todos os eixos.
+
+}
+Outras variações:
+
+background-attachment – define se a imagem fica fixa ou não enquanto rolamos a tela;
+background-position – define onde a imagem de fundo é posicionada;
+background-clip – define a área onde a imagem de fundo é aplicada;
+background-origin – define a posição de origem da imagem em um elemento;
+background-size – define as dimensões da imagem de fundo.
+Para margens
+As margens em CSS servem para que um bloco se distancie de blocos vizinhos e também da extremidade do navegador. E isso é muito útil para criar áreas de respiro entre elementos, definir posicionamentos e auxiliar na diagramação de um layout quando usado em conjunto com as propriedades width e height.
+
+margin
+
+A propriedade responsável por definir margens para um elemento se chama “margin”. Veja um exemplo:
+
+div {
+
+   margin: 10px;
+
+}
+Aqui diz que o elemento “div” deve se distanciar 10 pixels em todos os lados em relação a outros elementos ao seu redor. Essa regra equivale a esta:
+
+div {
+
+   margin-top: 10px;
+
+   margin-right: 10px;
+
+   margin-bottom: 10px;
+
+   margin-left: 10px;
+
+}
+Mais obviamente a regra anteriormente é melhor por economizar código, tempo e melhorar o desempenho do site.
+
+É mais indicado usar as regras para os lados quando somente um deles precisa ser adotado. Veja:
+
+div {
+
+   margin-top: 30px; /* aplica uma margem de 30 pixels no topo fazendo com que o bloco se distancie em relação ao que estiver acima dele */;
+
+}
+Para preenchimentos
+Preenchimento ou espaçamento é similar às margens. Ele também cria uma área de respiro. Só que desta vez é entre o conteúdo e extremidade de um box. A propriedade responsável por isso se chama “padding”.
+
+padding
+
+Veja um exemplo:
+
+div {
+
+   padding: 10px;
+
+}
+Da mesma forma que vimos em margin, o padding também pode ser aplicado para os lados com padding-top, padding-right, padding-bottom e padding-left.
+
+Para bordas
+A propriedade “border” é responsável por especificar a espessura, o estilo e a cor da borda de um elemento.
+
+Existem variantes desta propriedade para cada tipo de valor que pretendes usar. São elas:
+
+Border-style: Especifica o estilo da borda.
+
+Desta propriedade ainda é possível conseguir variações para os lados de um box: border-top-style, border-right-style, border-bottom-style e border-left-style.
+
+Exemplo:
+
+div {
+
+   border-style: solid;
+
+}
+Border-width: Especifica a espessura.
+
+Suas variações: border-top-width, border-right-width, border-bottom-width e border-left-width.
+
+Exemplo:
+
+div {
+
+   border-width: 1px;  /* Só funciona se border-style também estiver declarado */
+
+}
+Border-color: Especifica a cor da borda.
+
+Suas variações: border-top-color, border-right-color, border-bottom-color e border-left-color.
+
+Exemplo:
+
+div {
+
+   border-color: #000000;   /* Só funciona se border-style também estiver declarado */
+
+}
+Porém a forma mais utilizada é a que reúne as três em uma só declaração abreviada. Veja:
+
+div {
+
+   border: 2px solid #000000;
+
+}
+Temos o valor da espessura (2px), do estilo (solid) e da cor da borda (#000000) tudo reunido na declaração.
+
+Esta forma também representa outras variações de cada lado de um elemento. Veja:
+
+div {
+
+   border-top: 2px solid #000000;
+
+   border-right: 2px solid #000000;
+
+   border-bottom: 2px solid #000000;
+
+   border-left: 2px solid #000000;
+
+}
+Exemplo
+Depois desta apresentação com propriedades bastantes usadas e princípios do CSS deixarei um código de exemplo para você identificar e estudar o que foi passado neste artigo.
+
+Primeiro o HTML. Ele é baseado no código desenvolvido no artigo “18 coisas sobre HTML que eu gostaria que tivessem me dito quando comecei a criar meu primeiro site” e está com pequenas alterações.
+
+Veja (html-e-css.html):
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="UTF-8">
+
+		<meta content="noindex, follow" name="robots">
+
+		<link rel="stylesheet" href="https://www.chiefofdesign.com.br/posts-archives/estilo-html-e-css.css">
+
+		<title>Exemplo dos elementos apresentados</title>
+
+	</head>
+
+	<body>
+
+	<div id="corpo">
+
+		<h1>Eu sou o título principal desta página</h1>
+
+		<div>
+
+			<h2>Eu represento um título importante dentro deste bloco (div) interno.</h2>
+
+			<img src="imagem-do-bloco.jpg" alt="Sou a imagem deste bloco" width="560" height="311">
+
+			<p>Eu sou o primeiro parágrafo deste bloco. Meu conteúdo consiste em explicar o que o título propõe.</p>
+
+			<p>Eu sou o segundo parágrafo e dentro de um mim tem <strong>um trecho que quero da ênfase.</strong></p>
+
+			<a href="https://www.chiefofdesign.com.br/ebook-guia-porftolio/">Um sou um link que aponta para uma página interna do Chief of Design.</a>
+
+		</div>
+
+	</div>
+
+	</body>
+
+</html>
+Você pode copiar este código e colar em seu editor para testar ou acessar o resultado final aqui.
+
+Agora o CSS (estilo-html-e-css.css):
+
+body {
+
+	background-color: #262626;
+
+	margin:0;
+
+	padding: 0;
+
+	font-family: Arial, sans-serif;
+
+	color: #626262;
+
+}
+
+#corpo {
+
+	background-color: #F9F9F9;
+
+	margin: 20px;
+
+	width: 570px;	
+		
+	padding: 40px;
+
+	border: 3px solid #CCC;
+
+}
+
+h1 {
+
+	text-align: justify;
+
+	color: #FF1B7B;
+
+}
+
+h2 {
+	
+        color: #626262;
+
+	font-weight: 100;
+
+}
+
+img {
+	
+         border: 5px solid #ffffff;
+
+}
+
+p {
+
+	font: normal 16px/20px Arial, sans-serif;
+
+}
+
+a {
+
+	font-weight: bold;
+
+	color:#11B4FF;
+
+	text-align: center;
+
+}
